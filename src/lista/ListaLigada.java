@@ -41,11 +41,39 @@ public class ListaLigada {
 		}
 	}
 	
-	public void remover (String novoValor ) {
-		
+	public void remover (String valorProcurado ) {
+		Elemento anterior = null;       
+		Elemento atual = this.primeiro;
+		for(int i = 0; i < this.getTamanho(); i++) {
+			if (atual.getValor().equalsIgnoreCase(valorProcurado)) {
+				if(this.getTamanho() == 1) {
+					this.primeiro = null;
+					this.ultimo = null;
+				} else if(atual == primeiro) {
+					this.primeiro = atual.getProximo();
+					atual.setProximo(null);
+				} else if(atual == ultimo) {
+					this.ultimo = anterior;
+					anterior.setProximo(null);
+				} else {
+					anterior.setProximo(atual.getProximo());
+					atual = null;
+				}
+				this.tamanho--;
+				break;
+			}
+			atual = atual.getProximo();
+			anterior = atual;
+		}
 	}
 	
 	public Elemento get(int posicao) {
-		return null;
+		Elemento atual = this.primeiro;
+		for(int i = 0; i < posicao; i++) {
+			if (atual.getProximo() != null) {
+				atual = atual.getProximo();
+			}
+		}
+		return atual;
 	}
 }
