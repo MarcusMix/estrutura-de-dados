@@ -4,14 +4,9 @@ public class Elemento {
 	private String valor;
 	private Elemento proximo;
 
-	
-
-
 	public Elemento(String novoValor) {
 		this.valor = novoValor;
 	}
-
-
 
 	public String getValor() {
 		return valor;
