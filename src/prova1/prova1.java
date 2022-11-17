@@ -15,6 +15,7 @@ public class prova1 {
 		int fila[] = new int[20];
 		Queue<Integer> filaQueue = new LinkedList<>();
 		Stack<Integer> pilhaStack = new Stack<>();
+		Stack<Integer> pilhaInvertida = new Stack<Integer>();
 		
 		int maior = 0;
 		int menor = 99;
@@ -33,6 +34,10 @@ public class prova1 {
 			soma += numeros;
 		}
 		
+		for (int i = 0; i < fila.length; i++) {
+			pilhaInvertida.add(pilhaStack.pop());
+		}
+		
 		double media = soma / fila.length;
 		System.out.println("Fila pronta, aperte ENTER para continuar");
 		
@@ -41,10 +46,11 @@ public class prova1 {
 			if (!input.equals("")) {
 			} else {
 				System.out.println("Impressão da fila: " + filaQueue);	
-				System.out.println("Impressão da pilha: " + pilhaStack);
+				System.out.println("Impressão da pilha: " + pilhaInvertida);
 				System.out.println("Maior número criado pelo Random: " + maior);
 				System.out.println("Menor número criado pelo Random: " + menor);
 				System.out.println("A média dos números criados é: " + media);
+				break;
 			}
 		}
 			
