@@ -1,4 +1,4 @@
-package ArvoreBinaria;
+package arvore_binaria;
 
 public class Elemento<TIPO> {
 	private TIPO valor;
