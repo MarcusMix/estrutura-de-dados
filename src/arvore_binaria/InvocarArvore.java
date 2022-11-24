@@ -21,5 +21,4 @@ public class InvocarArvore {
 		System.out.println("\nPós-ordem");
 		arvore.posOrdem(arvore.getRaiz());
 	}
-
 }

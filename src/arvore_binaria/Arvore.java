@@ -39,6 +39,7 @@ public class Arvore<TIPO extends Comparable> {
 		return raiz;
 	}
 	
+	// Em Ordem
 	public void emOrdem(Elemento<TIPO> atual) {
 		if(atual != null) {
 			emOrdem(atual.getEsquerda());
@@ -47,23 +48,21 @@ public class Arvore<TIPO extends Comparable> {
 		}
 	}
 
+	//Pré Ordem
 	public void preOrdem(Elemento<TIPO> atual) {
 		if(atual != null) {
 			System.out.println(atual.getValor());
 			preOrdem(atual.getEsquerda());
 			preOrdem(atual.getDireita());
 		}
-		
 	}
 
+	//Pós Ordem
 	public void posOrdem(Elemento<TIPO> atual) {
 		if(atual != null) {
 			posOrdem(atual.getEsquerda());
 			preOrdem(atual.getDireita());
 			System.out.println(atual.getValor());
-		}
-		
+		}	
 	}
-
-	
 }
